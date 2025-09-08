@@ -1,0 +1,152 @@
+// Hari yang dipakai untuk filter
+export const DAYS = [
+  "Semua",
+  "Senin",
+  "Selasa",
+  "Rabu",
+  "Kamis",
+  "Jumat",
+  "Sabtu",
+];
+
+// Spesialisasi untuk filter (silakan sesuaikan)
+export const SPECS = [
+  "Semua",
+  "Spesialis Kandungan",
+  "Spesialis Anak",
+  "Spesialis Bedah",
+  "Spesialis Penyakit Dalam",
+  "Radiologi",
+  "Spesialis Saraf",
+  "Spesialis iwa",
+  "Urologi",
+  "Spesialis Mata",
+  "Spesialis Paru",
+  "Spesialis Jantung"
+];
+
+// Data dokter – ganti path image sesuai fotomu di /public/assets/dokter
+export const DOCTORS = [
+  {
+    id: "turah",
+    name: "dr. Hj. Turah, Sp.OG, M.Kes",
+    spec: "Spesialis Kandungan",
+    days: ["Senin - Jumat 'Pagi'(Pasien Umum) Senin - Sabtu 'Sore'(BPJS)"],
+    hours: "08.00–10.00 (pagi) 16.00 – 20.00 (sore)",
+    image: "/assets/dokter/turah.jpg",
+  },
+  {
+    id: "bahrawi",
+    name: "dr. Bahrawi, Sp.OG",
+    spec: "Spesialis Kandungan",
+    days: ["Selasa", "Kamis"],
+    hours: "16.00–20.00",
+    image: "/assets/dokter/bahrawi.jpg",
+  },
+  {
+    id: "fera-diastyarini",
+    name: "dr. Fera Diastyarini, Sp.A",
+    spec: "Spesialis Anak",
+    days: ["Senin", "Rabu", "Jumat"],
+    hours: "18.00–20.00",
+    image: "/assets/dokter/fera.jpg",
+  },
+  {
+    id: "agus-sunandar",
+    name: "dr. Agus Sunandar, Sp.A",
+    spec: "Spesialis Anak",
+    days: ["Selasa", "Kamis"],
+    hours: "18.00–20.00",
+    image: "/assets/dokter/agus.jpg",
+  },
+  {
+    id: "airlangga",
+    name: "dr. Airlangga W, Sp.B",
+    spec: "Spesialis Bedah",
+    days: ["Senin", "Kamis"],
+    hours: "16.00–17.00",
+    image: "/assets/dokter/airlangga.jpg",
+  },
+  {
+    id: "sri",
+    name: "dr. Sri Mulyono, Sp.B",
+    spec: "Spesialis Bedah",
+    days: ["Senin - Kamis"],
+    hours: "18.00–20.00",
+    image: "/assets/dokter/sri.jpg",
+  },
+  {
+    id: "hidayat",
+    name: "dr. Moh. Hidayatur R, Sp.PD",
+    spec: "Spesialis Penyakit Dalam",
+    days: ["Senin Dan Selasa (Pasien Umum)", "Kamis(BPJS)"],
+    hours: "17.00–20.00",
+    image: "/assets/dokter/hidayat.jpg",
+  },
+  {
+    id: "ariska",
+    name: "dr. Ariska Megasari, Sp.PD",
+    spec: "Spesialis Penyakit Dalam",
+    days: ["Rabu"],
+    hours: "15.30–17.00",
+    image: "/assets/dokter/ariska.jpg",
+  },
+  {
+    id: "radyo",
+    name: "Radyo Wiranto, Sp.M",
+    spec: "Spesialis Mata",
+    days: ["Senin", "Selasa", "Rabu"],
+    hours: "14.00–16.30",
+    image: "/assets/dokter/radyo.jpg",
+  },
+   {
+    id: "adit",
+    name: "dr. Aditya Airlangga EP, Sp.U",
+    spec: "Urologi",
+    days: ["Senin", "Rabu", "Jumat"],
+    hours: "13.00–16.00",
+    image: "/assets/dokter/adit.jpg",
+  },
+  {
+    id: "jamilah",
+    name: "dr. Jamilah, Sp.N",
+    spec: "Spesialis Saraf",
+    days: ["Senin - Kamis"],
+    hours: "18.00–20.00",
+    image: "/assets/dokter/jamilah.jpg",
+  },
+
+  {
+    id: "myra",
+    name: "dr. Myra Edwina S, Sp.KJ",
+    spec: "Spesialis Jiwa",
+    days: ["Senin - Jumat"],
+    hours: "14.00–16.00",
+    image: "/assets/dokter/myra.jpg",
+  },
+ 
+  {
+    id: "najich",
+    name: "dr. Abdulloh Najich, Sp.P",
+    spec: "Spesialis Paru",
+    days: ["Senin - Kamis"],
+    hours: "14.00–Selesai (Sore)",
+    image: "/assets/dokter/najich.jpg",
+  },
+  {
+    id: "oriza",
+    name: "dr. Oryza Sativa, Sp.JP",
+    spec: "Spesialis Jantung",
+    days: ["Coming Soon"],
+    hours: "Coming Soon",
+    image: "/assets/dokter/jantung.jpg",
+  },
+  {
+    id: "syafik",
+    name: "dr. Muhammad Syafik, Sp.Rad",
+    spec: "Radiologi",
+    days: ["Senin - Kamis"],
+    hours: "15.00–17.00",
+    image: "/assets/dokter/syafik.jpg",
+  },
+];

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+# Disallow common noise folders if present
+Disallow: /admin/
+Disallow: /drafts/
+Disallow: /tmp/
+
+Sitemap: https://rsnindhitasampang.com/sitemap.xml

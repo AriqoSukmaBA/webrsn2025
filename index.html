@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Viewport yang benar untuk mobile -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="theme-color" content="#f97316" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="42x42"
+      href="/assets/logo-nindhita1.png"
+    />
+    <link rel="apple-touch-icon" href="/assets/logo-nindhita1.png" />
+
+    <title>RS Nindhita Sampang</title>
+
+    <!-- Sedikit reset agar body nggak ada margin & nggak spill horizontal -->
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;
+        -webkit-text-size-adjust: 100%;
+      }
+      /* berjaga-jaga: gambar nggak boleh melebihi lebar layar */
+      img,
+      video,
+      canvas,
+      iframe {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

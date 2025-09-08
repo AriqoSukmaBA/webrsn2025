@@ -1,0 +1,232 @@
+@import "tailwindcss";
+:root[data-theme="soft"] {
+  --rs-primary: #f47a1f;
+  --rs-primary-600: #e06700;
+  --rs-primary-700: #b55300;
+  --rs-accent: #118a58;
+  --rs-accent-700: #0b6a44;
+  --rs-card-grad: linear-gradient(
+    135deg,
+    #ffe5cc 0%,
+    #fff8f0 55%,
+    #e6f4ea 100%
+  );
+}
+
+:root[data-theme="vivid"] {
+  --rs-primary: #ff7a00;
+  --rs-primary-600: #f06200;
+  --rs-primary-700: #c24d00;
+  --rs-accent: #0ea565;
+  --rs-accent-700: #7b480a;
+  --rs-card-grad: linear-gradient(
+    135deg,
+    #ffd1a6 0%,
+    #fff3e4 55%,
+    #d6f4e2 100%
+  );
+}
+
+html {
+  scroll-behavior: smooth;
+}
+/* util 3D kamu tetap di sini */
+.tilt {
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+}
+.tilt:hover {
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+}
+.tilt > .z1 {
+  transform: translateZ(24px);
+}
+.tilt > .z2 {
+  transform: translateZ(40px);
+}
+
+/* default kalau belum ada: */
+:root {
+  color-scheme: light;
+}
+html {
+  scroll-behavior: smooth;
+}
+@keyframes soft-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* Utility kecil kalau mau dipakai di elemen: */
+.soft-float {
+  animation: soft-float 6s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* === DROPDOWN PERSIS SEPERTI SCREENSHOT (CSS-ONLY) === */
+
+/* Panel level-1: oranye solid + gradasi tipis, rounded besar, shadow lembut */
+header.sticky .absolute.top-full.mt-3 {
+  /* jangan ubah posisi: biarkan kelas Tailwind yang ada (left-0 atau center) */
+  min-width: 360px; /* lebar mirip contoh */
+  border-radius: 18px;
+  padding: 8px;
+  color: #fff;
+  /* gradasi oranye halus seperti contoh */
+  background: linear-gradient(180deg, #f07f26 0%, #c75a14 100%) !important;
+  /* garis tepi & bayangan lembut */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 14px 36px rgba(199, 90, 20, 0.25);
+}
+
+/* Item di dalam panel: teks putih, hover putih tipis */
+header.sticky .absolute.top-full.mt-3 a[href],
+header.sticky .absolute.top-full.mt-3 .cursor-default {
+  color: #fff !important;
+  border-radius: 12px;
+  padding: 0.5rem 0.75rem; /* px-3 py-2 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* memberi ruang untuk panah pada item parent */
+}
+header.sticky .absolute.top-full.mt-3 a[href]:hover,
+header.sticky .absolute.top-full.mt-3 .cursor-default:hover {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.06
+  ) !important; /* BUKAN oranye lebih gelap */
+}
+
+/* Jangan tambahkan chevron otomatis pada semua <a> (hapus efek lama bila ada) */
+header.sticky .absolute.top-full.mt-3 a[href]::after {
+  content: none !important;
+}
+
+/* Panah (SVG) yang sudah ada pada parent item dibuat lebih halus */
+header.sticky .absolute.top-full.mt-3 .cursor-default svg {
+  opacity: 0.7;
+}
+
+/* Panel level-2 (nested: ICU/NICU/PICU) — samakan gaya */
+header.sticky .absolute.left-full.top-0 {
+  min-width: 300px;
+  border-radius: 18px;
+  padding: 8px;
+  color: #fff;
+  background: linear-gradient(180deg, #f07f26 0%, #c75a14 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 14px 36px rgba(199, 90, 20, 0.25);
+}
+header.sticky .absolute.left-full.top-0 a[href],
+header.sticky .absolute.left-full.top-0 .cursor-default {
+  color: #fff !important;
+  border-radius: 12px;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header.sticky .absolute.left-full.top-0 a[href]:hover,
+header.sticky .absolute.left-full.top-0 .cursor-default:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Pastikan variabel warna ada */
+:root {
+  --rs-primary: #f97316; /* tidak dipakai langsung di panel, tapi tetap disiapkan */
+  --rs-primary-700: #c2410c;
+}
+/* ==== Cards putih untuk memisahkan dari latar oranye ==== */
+.section-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb; /* slate-200 */
+  border-radius: 1rem; /* ~ rounded-2xl */
+  padding: 1.25rem; /* p-5 */
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.06);
+}
+@media (min-width: 640px) {
+  .section-card {
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+  }
+}
+
+/* ambience halus oranye di belakang section */
+.orange-ambient {
+  position: relative;
+}
+.orange-ambient::before {
+  content: "";
+  position: absolute;
+  inset: -22px;
+  background: radial-gradient(
+      120px 80px at 18% 18%,
+      rgba(249, 115, 22, 0.18),
+      transparent 60%
+    ),
+    radial-gradient(
+      140px 90px at 82% 28%,
+      rgba(234, 88, 12, 0.16),
+      transparent 60%
+    );
+  filter: blur(12px);
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* hover-lift yang lembut untuk card */
+.hover-lift {
+  transform: translateY(0);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(17, 24, 39, 0.1);
+}
+
+/* tombol gen-z (kalau belum ada di projectmu) */
+.btn-genz {
+  background: linear-gradient(135deg, #fb923c, #f97316);
+  color: #fff;
+}
+.btn-genz:hover {
+  filter: brightness(0.97);
+}
+
+/* ring/bar animasi */
+.ring-stroke {
+  transition: stroke-dashoffset 0.9s ease;
+}
+.bar-anim {
+  transition: width 0.7s ease;
+}
+/* Full-bleed helper: bentangkan elemen selebar viewport */
+@layer utilities {
+  .full-bleed {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+}
+
+/* Hide scrollbar but keep scrollability for horizontal carousels */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

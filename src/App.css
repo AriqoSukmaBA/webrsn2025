@@ -1,0 +1,254 @@
+/* ==== ISI AWALMU (TETAP) ==== */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #ffaa64aa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #fb9461aa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+/* === Accordion utilities (slide down/up) === */
+@layer utilities {
+  .accordion-panel {
+    overflow: hidden;
+    will-change: max-height, opacity;
+    transition: max-height 0.28s ease, opacity 0.18s ease, transform 0.18s ease;
+  }
+  .accordion-open {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .accordion-closed {
+    max-height: 0 !important;
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+
+  /* bonus animasi “pop” saat tab diklik */
+  .tap-pop {
+    transition: transform 0.05s ease;
+  }
+  .tap-pop:active {
+    transform: scale(0.98);
+  }
+}
+/* =========================
+   GEN-Z ORANGE GRAD THEME
+   ========================= */
+:root {
+  /* warna dasar (fallback) */
+  --rs-primary-50: #fff1e6;
+  --rs-primary-100: #ffe1cc;
+  --rs-primary-600: #f47a1f;
+  --rs-primary-700: #e06700;
+  --rs-accent: #ec4899;
+
+  /* gradient utama (orange -> pink -> purple) */
+  --rs-grad: linear-gradient(90deg, #f97316 0%, #fb7185 50%, #8b5cf6 100%);
+  /* gradient alternatif (untuk hover) */
+  --rs-grad-2: linear-gradient(90deg, #fdba74 0%, #f472b6 50%, #a78bfa 100%);
+}
+
+/* Background gradient reusable */
+.bg-rs-grad {
+  background-image: var(--rs-grad);
+  background-size: 200% 200%;
+  animation: rsGradMove 14s ease infinite;
+}
+.bg-rs-grad-2 {
+  background-image: var(--rs-grad-2);
+  background-size: 200% 200%;
+  animation: rsGradMove 14s ease infinite;
+}
+
+/* Border gradient (untuk box/section) */
+.border-rs-grad {
+  border: 1px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box, var(--rs-grad) border-box;
+  border-radius: 1rem; /* match rounded-2xl feel */
+}
+
+/* Tombol gradient */
+.btn-rs-grad {
+  background-image: var(--rs-grad);
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.65rem 1.1rem;
+  font-weight: 600;
+  transition: filter 0.2s ease, transform 0.06s ease;
+}
+.btn-rs-grad:hover {
+  filter: brightness(1.05);
+}
+.btn-rs-grad:active {
+  transform: scale(0.98);
+}
+
+/* Text gradient (judul besar) */
+.text-rs-grad {
+  background-image: var(--rs-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Subtle glass overlay (untuk panel di atas gambar) */
+.glass-white {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(6px);
+}
+.glass-dark {
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+}
+
+/* animasi gerak gradient */
+@keyframes rsGradMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Helpers agar cocok dgn util kamu sebelumnya */
+.shadow-rs {
+  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.18);
+}
+.ring-rs {
+  box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.25);
+}
+
+/* ==== OVERRIDE RAMAH MOBILE (TAMBAHAN, TIDAK MENGHAPUS DI ATAS) ==== */
+
+/* lepas “kotak” 1280px & padding 2rem pada semua viewport */
+#root {
+  max-width: none !important;
+  padding: 0 !important;
+  text-align: initial !important;
+  width: 100% !important;
+}
+
+/* cegah geser horizontal */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* gambar dll tidak boleh meluber */
+img,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* util: padding-top sesuai tinggi navbar (CSS var diisi oleh Navbar.jsx) */
+.safe-pt {
+  padding-top: var(--nav-h, 64px);
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.animate-slideIn {
+  animation: slideIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease forwards;
+}
+html {
+  scroll-behavior: smooth;
+}
+:target {
+  scroll-margin-top: calc(var(--nav-h, 80px) + 8px);
+}
+html {
+  scroll-behavior: smooth; /* fallback kalau JS belum sempat jalan */
+}
+
+/* default aman bila --nav-h belum diset seketika */
+:root {
+  --nav-h: 80px;
+}
+/* ===== FIX: HeroSlider PNG full tanpa kepotong ===== */
+
+/* 1) Bikin wrapper hero lebih fleksibel tingginya
+   - override inline height dari component */
+#beranda {
+  height: auto !important;
+  min-height: calc(100svh - var(--nav-h) - 60px);
+}
+
+/* 2) Khusus gambar PNG di hero → pakai object-contain
+   - biar seluruh PNG terlihat utuh
+   - beri latar putih supaya tidak ada bar transparan yang ganjil */
+#beranda > img[src$=".png"] {
+  object-fit: contain !important;
+  background: #fff;
+}
+
+/* (Opsional) Kalau PNG kamu punya transparent edge & mau rapih di tengah */
+#beranda > img[src$=".png"] {
+  object-position: center center !important;
+}
+
+/* (Opsional) Kalau JPG/JPEG ingin tetap cover penuh */
+#beranda > img[src$=".jpg"],
+#beranda > img[src$=".jpeg"] {
+  object-fit: cover !important;
+  object-position: center center !important;
+}

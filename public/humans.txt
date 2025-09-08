@@ -1,0 +1,12 @@
+/* TEAM */
+Hospital: Rumah Sakit Nindhita
+Location: Sampang, Jawa Timur, Indonesia
+Website: https://rsnindhitasampang.com
+
+/* TECHNOLOGY */
+Hosting: Cloudflare Pages
+Framework: React + Vite + Tailwind CSS
+
+/* CONTACT */
+Email: rumahsakitnindhita@gmail.com
+Phone: +62-853-8583-5878
