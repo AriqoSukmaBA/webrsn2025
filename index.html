@@ -1,136 +1,142 @@
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <meta name="theme-color" content="#f97316" />
+<!doctype html>
+<html lang="id">
+  <!-- ===== HEAD ===== -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="theme-color" content="#f97316" />
 
-  <!-- Canonical: domain utama -->
-  <link rel="canonical" href="https://rsnindhitasampang.com/" />
+    <!-- Canonical -->
+    <link rel="canonical" href="https://rsnindhitasampang.com/" />
 
-  <!-- Favicon / PWA icons -->
-  <link rel="icon" type="image/png" sizes="42x42" href="/assets/logo-nindhita1.png" />
-  <link rel="apple-touch-icon" href="/assets/logo-nindhita1.png" />
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="42x42" href="/assets/logo-nindhita1.png" />
+    <link rel="apple-touch-icon" href="/assets/logo-nindhita1.png" />
 
-  <!-- ====== META UTAMA (SEO) ====== -->
-  <title>Website Resmi RS Nindhita Sampang | Rumah Sakit Nindhita</title>
-  <meta name="description" content="Website resmi Rumah Sakit Nindhita Sampang. Layanan kandungan (USG 3D/4D, ERACS, ILA), anak, bedah, ICU/NICU/PICU, rawat inap, rawat jalan, radiologi, dan laboratorium. UGD 24 jam." />
+    <!-- META SEO -->
+    <title>Website Resmi RS Nindhita Sampang | Rumah Sakit Nindhita</title>
+    <meta name="description" content="Website resmi Rumah Sakit Nindhita Sampang. Layanan kandungan (USG 3D/4D, ERACS, ILA), anak, bedah, ICU/NICU/PICU, rawat inap, rawat jalan, radiologi, dan laboratorium. UGD 24 jam." />
 
-  <!-- Open Graph / Social -->
-  <meta property="og:title" content="Website Resmi RS Nindhita Sampang | Rumah Sakit Nindhita" />
-  <meta property="og:description" content="Website resmi RS Nindhita Sampang. Layanan lengkap: kandungan, anak, bedah, ICU/NICU/PICU, USG 3D/4D, ERACS, ILA, UGD 24 jam." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://rsnindhitasampang.com" />
-  <meta property="og:image" content="https://rsnindhitasampang.com/assets/rs-nindhita-building.jpg" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Website Resmi RS Nindhita Sampang | Rumah Sakit Nindhita" />
+    <meta property="og:description" content="Website resmi RS Nindhita Sampang. Layanan lengkap: kandungan, anak, bedah, ICU/NICU/PICU, USG 3D/4D, ERACS, ILA, UGD 24 jam." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rsnindhitasampang.com" />
+    <meta property="og:image" content="https://rsnindhitasampang.com/assets/rs-nindhita-building.jpg" />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Website Resmi RS Nindhita Sampang | Rumah Sakit Nindhita" />
-  <meta name="twitter:description" content="Website resmi RS Nindhita Sampang. Layanan kandungan, anak, bedah, ICU/NICU/PICU, USG 3D/4D, ERACS, ILA, UGD 24 jam." />
-  <meta name="twitter:image" content="https://rsnindhitasampang.com/assets/rs-nindhita-building.jpg" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Website Resmi RS Nindhita Sampang | Rumah Sakit Nindhita" />
+    <meta name="twitter:description" content="Website resmi RS Nindhita Sampang. Layanan kandungan, anak, bedah, ICU/NICU/PICU, USG 3D/4D, ERACS, ILA, UGD 24 jam." />
+    <meta name="twitter:image" content="https://rsnindhitasampang.com/assets/rs-nindhita-building.jpg" />
 
-  <!-- ====== JSON-LD: Hospital (lengkap & valid) ====== -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Hospital",
-    "@id": "https://rsnindhitasampang.com/#hospital",
-    "name": "Rumah Sakit Nindhita Sampang",
-    "url": "https://rsnindhitasampang.com",
-    "logo": "https://rsnindhitasampang.com/assets/logo-nindhita1.png",
-    "image": "https://rsnindhitasampang.com/assets/rs-nindhita-building.jpg",
-    "telephone": "+62-813-3167-1110",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Jl. Samsul Arifin No.87, RW IV, Polagan",
-      "addressLocality": "Sampang",
-      "addressRegion": "Jawa Timur",
-      "postalCode": "69216",
-      "addressCountry": "ID"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -7.047,
-      "longitude": 113.240
-    },
-    "openingHours": "Mo-Su 00:00-23:59",
-    "department": [
-      {
-        "@type": "MedicalDepartment",
-        "name": "Poli Kandungan",
-        "medicalSpecialty": "Obstetrics",
-        "availableService": [
-          { "@type": "MedicalProcedure", "name": "USG 3D/4D" },
-          { "@type": "MedicalProcedure", "name": "ERACS" },
-          { "@type": "MedicalProcedure", "name": "ILA" }
-        ],
-        "employee": [
-          {
-            "@type": "Physician",
-            "name": "dr. Hj. Turah, Sp.OG, M.Kes",
-            "medicalSpecialty": "Obstetrics & Gynecology",
-            "openingHoursSpecification": [
-              { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "08:00", "closes": "10:00" },
-              { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "16:00", "closes": "20:00" }
-            ]
-          },
-          {
-            "@type": "Physician",
-            "name": "dr. Bahrawi, Sp.OG",
-            "medicalSpecialty": "Obstetrics & Gynecology",
-            "openingHoursSpecification": [
-              { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Thursday"], "opens": "16:00", "closes": "20:00" }
-            ]
-          }
-        ]
+    <!-- JSON-LD: Hospital -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Hospital",
+      "@id": "https://rsnindhitasampang.com/#hospital",
+      "name": "Rumah Sakit Nindhita Sampang",
+      "url": "https://rsnindhitasampang.com",
+      "logo": "https://rsnindhitasampang.com/assets/logo-nindhita1.png",
+      "image": "https://rsnindhitasampang.com/assets/rs-nindhita-building.jpg",
+      "telephone": "+62-813-3167-1110",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Samsul Arifin No.87, RW IV, Polagan",
+        "addressLocality": "Sampang",
+        "addressRegion": "Jawa Timur",
+        "postalCode": "69216",
+        "addressCountry": "ID"
       },
-      {
-        "@type": "MedicalDepartment",
-        "name": "Poli Anak",
-        "medicalSpecialty": "Pediatrics",
-        "employee": [
-          {
-            "@type": "Physician",
-            "name": "dr. Fera Diastyarini, Sp.A",
-            "medicalSpecialty": "Pediatrics",
-            "openingHoursSpecification": [
-              { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Wednesday","Friday"], "opens": "18:00", "closes": "20:00" }
-            ]
-          },
-          {
-            "@type": "Physician",
-            "name": "dr. Agus Sunandar, Sp.A",
-            "medicalSpecialty": "Pediatrics",
-            "openingHoursSpecification": [
-              { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Thursday"], "opens": "18:00", "closes": "20:00" }
-            ]
-          }
-        ]
-      }
-    ],
-    "sameAs": [
-      "https://www.instagram.com/rs_nindhita",
-      "https://www.facebook.com/people/Rumah-Sakit-Nindhita/100063920238006/"
-    ]
-  }
-  </script>
-
-  <!-- ====== JSON-LD: WebSite + SearchAction (biar sitelinks/penelusuran muncul) ====== -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": "https://rsnindhitasampang.com/#website",
-    "url": "https://rsnindhitasampang.com",
-    "name": "Website Resmi RS Nindhita Sampang",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://rsnindhitasampang.com/cari?q={search_term_string}",
-      "query-input": "required name=search_term_string"
+      "geo": { "@type": "GeoCoordinates", "latitude": -7.047, "longitude": 113.240 },
+      "openingHours": "Mo-Su 00:00-23:59",
+      "department": [
+        {
+          "@type": "MedicalDepartment",
+          "name": "Poli Kandungan",
+          "medicalSpecialty": "Obstetrics",
+          "availableService": [
+            { "@type": "MedicalProcedure", "name": "USG 3D/4D" },
+            { "@type": "MedicalProcedure", "name": "ERACS" },
+            { "@type": "MedicalProcedure", "name": "ILA" }
+          ],
+          "employee": [
+            {
+              "@type": "Physician",
+              "name": "dr. Hj. Turah, Sp.OG, M.Kes",
+              "medicalSpecialty": "Obstetrics & Gynecology",
+              "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "08:00", "closes": "10:00" },
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "16:00", "closes": "20:00" }
+              ]
+            },
+            {
+              "@type": "Physician",
+              "name": "dr. Bahrawi, Sp.OG",
+              "medicalSpecialty": "Obstetrics & Gynecology",
+              "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Thursday"], "opens": "16:00", "closes": "20:00" }
+              ]
+            }
+          ]
+        },
+        {
+          "@type": "MedicalDepartment",
+          "name": "Poli Anak",
+          "medicalSpecialty": "Pediatrics",
+          "employee": [
+            {
+              "@type": "Physician",
+              "name": "dr. Fera Diastyarini, Sp.A",
+              "medicalSpecialty": "Pediatrics",
+              "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Wednesday","Friday"], "opens": "18:00", "closes": "20:00" }
+              ]
+            },
+            {
+              "@type": "Physician",
+              "name": "dr. Agus Sunandar, Sp.A",
+              "medicalSpecialty": "Pediatrics",
+              "openingHoursSpecification": [
+                { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Thursday"], "opens": "18:00", "closes": "20:00" }
+              ]
+            }
+          ]
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/rs_nindhita",
+        "https://www.facebook.com/people/Rumah-Sakit-Nindhita/100063920238006/"
+      ]
     }
-  }
-  </script>
+    </script>
 
-  <!-- Reset kecil agar tidak spill horizontal -->
-  <style>
-    html, body { height:100%; margin:0; padding:0; width:100%; overflow-x:hidden; -webkit-text-size-adjust:100%;}
-    img, video, canvas, iframe { max-width:100%; }
-  </style>
-</head>
+    <!-- JSON-LD: WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://rsnindhitasampang.com/#website",
+      "url": "https://rsnindhitasampang.com",
+      "name": "Website Resmi RS Nindhita Sampang",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://rsnindhitasampang.com/cari?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <style>
+      html, body { height:100%; margin:0; padding:0; width:100%; overflow-x:hidden; -webkit-text-size-adjust:100% }
+      img, video, canvas, iframe { max-width:100% }
+    </style>
+  </head>
+
+  <!-- ===== BODY (WAJIB ADA) ===== -->
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
