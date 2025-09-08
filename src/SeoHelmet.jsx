@@ -7,7 +7,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 
 export default function SeoHelmet({ title, description, path = "/" }) {
-  const site = "https://rsnindhita.com";
+  const site = "https://rsnindhitasampang.com";
   const fullTitle = title ? `${title} | RS Nindhita` : "Rumah Sakit Nindhita - Sampang";
 
   return (
