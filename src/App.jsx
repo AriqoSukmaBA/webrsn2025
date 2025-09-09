@@ -478,10 +478,10 @@ export default function App() {
               <li>
                 Email:{" "}
                 <a
-                  href="mailto:rumahsakitrsnindhita@gmail.com"
+                  href="mailto:rumahsakitnindhita@gmail.com"
                   className="hover:text-white break-words"
                 >
-                  rumahsakitrsnindhita@gmail.com
+                  rumahsakitnindhita@gmail.com
                 </a>
               </li>
               <li>
