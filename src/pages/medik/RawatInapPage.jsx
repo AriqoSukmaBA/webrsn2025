@@ -163,7 +163,7 @@ export default function RawatInapPage() {
                 //     VVIP                VIP                 Kelas I   Kelas II       Kelas III
                 ["Privasi",             ["Suite Privat",     "Privat",  "Tinggi",      "Sedang",       "Dasar"]],
                 ["Jumlah Bed/Kamar",    ["1 (suite)",        "1",       "2–3",         "3–4",          "4–6"]],
-                ["Kamar Mandi",         ["Dalam + heater",   "Dalam + heater", "Dalam", "Luar/Dalam",  "Luar"]],
+                ["Kamar Mandi",         ["Dalam + heater",   "Dalam + heater", "Dalam", "Dalam",  "Dalam"]],
                 ["AC/TV & Fasilitas",   ["AC + Smart TV + Kulkas + Pantry", "AC + TV Pribadi", "AC + TV Bersama", "Kipas/AC Bersama", "—"]],
               ].map(([fitur, cols]) => (
                 <tr key={fitur} className="border-t border-slate-200">
