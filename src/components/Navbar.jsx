@@ -345,14 +345,14 @@ export default function Navbar() {
             loading="eager"
             fetchpriority="high"
           />
-          <div className="leading-tight hidden sm:block">
-            <div className="font-bold text-slate-900 tracking-wide">
-              Rumah Sakit Nindhita
-            </div>
-            <div className="text-xs text-slate-500">
-              To Become The Hospital of Choice For The Community
-            </div>
+          <div className="leading-tight block min-w-0">
+          <div className="font-bold text-slate-800 tracking-wide text-sm sm:text-base">
+            Rumah Sakit Nindhita
           </div>
+          <div className="text-[10px] sm:text-xs text-slate-500 leading-snug max-w-[50ch] sm:max-w-none break-words">
+            To Become The Hospital of Choice For The Community
+          </div>
+        </div>
         </a>
 
         {/* NAV DESKTOP */}

@@ -2,11 +2,11 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const SLIDES = [
-  { img: "/assets/rs-nindhita-building.jpg" }, // 0
-  { img: "/assets/hero-2.jpg" },               // 1
-  { img: "/assets/hero-3.jpg" },               // 2
-  { img: "/assets/hero-4.jpg" },               // 3
-  { img: "/assets/hero-5.jpg" },               // 4
+  { img: "/assets/rs-nindhita-building.jpg", pos: "50% 40%" },
+  { img: "/assets/hero-2.jpg",               pos: "50% 50%" },
+  { img: "/assets/hero-3.jpg",               pos: "55% 45%" },
+  { img: "/assets/hero-4.jpg",               pos: "50% 50%" },
+  { img: "/assets/hero-5.jpg",               pos: "45% 50%" },
 ];
 
 export default function HeroSlider() {
@@ -14,12 +14,9 @@ export default function HeroSlider() {
   const t = useRef();
   const wrapRef = useRef(null);
 
-  // === Inject CSS: Ken Burns + full-bleed helper ===
+  // === Inject CSS: Ken Burns + full-bleed helper (SELALU update) ===
   useEffect(() => {
-    if (document.getElementById("kb-style")) return;
-    const s = document.createElement("style");
-    s.id = "kb-style";
-    s.textContent = `
+    const css = `
       @keyframes kbInOutA { 
         0% { transform: scale(1) translate3d(0,0,0); }
         100% { transform: scale(1.12) translate3d(0,0,0); }
@@ -38,7 +35,7 @@ export default function HeroSlider() {
         will-change: transform;
         transform-origin: center center;
       }
-      /* Helper agar section menabrak padding container dan selebar viewport */
+      /* helper: bentangkan section selebar viewport */
       .full-bleed {
         width: 100vw;
         position: relative;
@@ -48,7 +45,13 @@ export default function HeroSlider() {
         margin-right: -50vw;
       }
     `;
-    document.head.appendChild(s);
+    let s = document.getElementById("kb-style");
+    if (!s) {
+      s = document.createElement("style");
+      s.id = "kb-style";
+      document.head.appendChild(s);
+    }
+    s.textContent = css; // <- selalu sinkronkan isinya
   }, []);
 
   // ===== Autoplay (pause on hover / when tab hidden)
@@ -136,38 +139,37 @@ export default function HeroSlider() {
     return () => { stopWatchdogRef.current = true; };
   }, []);
 
-  // Untuk hero: paksa semua cover agar benar-benar full-bleed & tidak menyisakan tepi
-  const fitClassFor = () => "object-cover";
-
   return (
     <section
       id="beranda"
       ref={wrapRef}
       role="region"
       aria-label="Slider beranda"
-      className="relative select-none full-bleed overflow-hidden"
-      style={{ height: "calc(100svh - var(--nav-h))" }} // penuh layar, minus tinggi navbar (sudah dihitung otomatis)
+      className="relative select-none overflow-hidden bg-neutral-900
+             h-[56vw] min-h-[240px] md:h-[calc(100svh-var(--nav-h))]"
     >
       {/* Slides */}
       {SLIDES.map((s, idx) => {
-        const isActive = idx === i;
-        const kbClass = idx % 2 === 0 ? "kb-animate-a" : "kb-animate-b";
-        return (
-          <img
-            key={s.img}
-            src={s.img}
-            alt=""
-            className={`absolute inset-0 w-full h-full ${fitClassFor()}
-              transition-opacity duration-700 ${isActive ? "opacity-100" : "opacity-0"}
-              ${isActive ? kbClass : ""}`}
-            width="1920"
-            height="720"
-            fetchPriority={isActive ? "high" : "low"}
-            loading={idx === 0 ? "eager" : "lazy"}
-            decoding="async"
-          />
-        );
-      })}
+  const isActive = idx === i;
+  const kbClass = idx % 2 === 0 ? "kb-animate-a" : "kb-animate-b";
+  return (
+    <img
+      key={s.img}
+      src={s.img}
+      alt=""
+      className={`absolute inset-0 w-full h-full object-cover
+        transition-[opacity,transform] duration-700 ease-out
+        ${isActive ? "opacity-100 scale-[1.10] md:scale-100" : "opacity-0 scale-100"}
+        will-change-transform ${isActive ? kbClass : ""}`}
+      style={{ objectPosition: s.pos || "50% 50%" }}
+      width={1920}
+      height={720}
+      fetchPriority={isActive ? "high" : "low"}
+      loading={idx === 0 ? "eager" : "lazy"}
+      decoding="async"
+    />
+  );
+})}
 
       {/* Overlay gradient */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/15 via-black/10 to-black/20" />
