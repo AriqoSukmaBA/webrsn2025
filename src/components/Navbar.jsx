@@ -7,18 +7,21 @@ function AmbulanceIcon({ className = "w-6 h-6" }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="none"
       viewBox="0 0 24 24"
-      strokeWidth={1.8}
+      fill="none"
       stroke="currentColor"
+      strokeWidth={1.8}
       className={className}
       aria-hidden
     >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M6 18h12a2 2 0 0 0 2-2v-5.5a1 1 0 0 0-.293-.707l-3.5-3.5A1 1 0 0 0 15.5 6H14V4a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2zm10-8h2l2 2v2h-4v-4zm-9-1h2V7h2v2h2v2h-2v2H9v-2H7V9zM7 18a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm10 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
-      />
+      {/* headband kiri-kanan */}
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3a7 7 0 0 0-7 7v4" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3a7 7 0 0 1 7 7v4" />
+      {/* ear cups */}
+      <rect x="4" y="12" width="4" height="5" rx="1.5" />
+      <rect x="16" y="12" width="4" height="5" rx="1.5" />
+      {/* mic */}
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 18c0 1.66-1.34 3-3 3h-1" />
     </svg>
   );
 }
@@ -57,7 +60,7 @@ const LINKS_LEFT = [
           { label: "PICU", href: "/picu" },
         ],
       },
-      { label: "Instalasi Bedah Sentral", href: "/ibs" },
+      { label: "Instalasi Bedah Central", href: "/ibs" },
     ],
   },
   { label: "Jadwal Dokter", href: "#dokter" },

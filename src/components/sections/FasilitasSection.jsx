@@ -101,7 +101,7 @@ const ITEMS = [
   },
    {
     id: "ambulance",
-    name: "Ambulance dan Jenazah",
+    name: "Ambulance dan Pemulasaran Jenazah",
     img: "/assets/fasilitas/ambulance.jpg",
     gallery: [
       "/assets/fasilitas/ambulance.jpg",

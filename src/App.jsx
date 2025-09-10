@@ -513,12 +513,8 @@ export default function App() {
           onClick={() => setOpenChat(true)}
           className="fixed bottom-5 right-5 z-40 flex items-center gap-2 px-4 py-3 rounded-full shadow-lg bg-[var(--rs-primary)] text-white"
         >
-          <div className="w-16 h-16 rounded-full overflow-hidden bg-orange-500 flex items-center justify-center">
-            <img
-              src="/assets/ambulance_icon.svg"
-              alt="Ambulance"
-              className="w-10 h-10 object-contain"
-            />
+          <div className="w-10 h-10 rounded-full overflow-hidden bg-orange-500 flex items-center justify-center">
+            <img src="/assets/ambulance_icon.svg" className="w-full h-full object-contain scale-[1.5] origin-center" />
           </div>
         </button>
       )}

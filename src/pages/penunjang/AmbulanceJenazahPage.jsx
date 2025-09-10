@@ -5,7 +5,7 @@ export default function AmbulanceJenazahPage() {
   return (
     <ServiceLayout
       nav="about"
-      title="Instalasi Ambulance & Jenazah"
+      title="Instalasi Ambulance & Pemulasaran Jenazah"
       subtitle="Layanan ambulans 24 jam untuk rujukan/penjemputan dan pemulasaraan jenazah sesuai ketentuan."
       heroBadges={["Ambulans 24 Jam", "Rujukan Aman", "Pemulasaraan"]}
     >

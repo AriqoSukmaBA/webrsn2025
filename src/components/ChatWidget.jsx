@@ -60,14 +60,19 @@ export default function ChatWidget({
         <div className="flex items-center justify-between px-4 py-3 border-b border-slate-200 bg-gradient-to-r from-[var(--rs-primary)] to-orange-400 text-white">
           <div className="flex items-center gap-2">
             <svg
-              viewBox="0 0 24 24"
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-            >
-              <path d="M4 4h11a1 1 0 0 1 1 1v2h2.5a1 1 0 0 1 .8.4l1.7 2.3a1 1 0 0 1 .2.6V17a3 3 0 0 1-3 3h-1a3 3 0 0 1-6 0H9a3 3 0 0 1-6 0H2V5a1 1 0 0 1 1-1z" />
-            </svg>
+  viewBox="0 0 24 24"
+  className="w-5 h-5"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth="1.8"
+  aria-hidden
+>
+  <path strokeLinecap="round" strokeLinejoin="round" d="M12 3a7 7 0 0 0-7 7v4" />
+  <path strokeLinecap="round" strokeLinejoin="round" d="M12 3a7 7 0 0 1 7 7v4" />
+  <rect x="4" y="12" width="4" height="5" rx="1.5" />
+  <rect x="16" y="12" width="4" height="5" rx="1.5" />
+  <path strokeLinecap="round" strokeLinejoin="round" d="M12 18c0 1.66-1.34 3-3 3h-1" />
+</svg>
             <div className="font-semibold">
               {tab === "admin" ? "Chat Admin RS" : "Chat IGD"}
             </div>

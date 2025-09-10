@@ -20,18 +20,25 @@ export const SERVICES = [
     excerpt: "Kenyamanan perawatan didukung fasilitas memadai.",
     image: "/assets/layanan/rawat-inap.jpg",
   },
+   {
+    slug: "Instalasi bedah central",
+    title: "Instalasi Bedah Central ",
+    excerpt: "Pelayanan ibu & anak secara menyeluruh.",
+    image: "/assets/layanan/obgyn.jpg",
+  },
+   {
+    slug: "radiologi",
+    title: "Radiologi",
+    excerpt: "Layanan radiologi dengan peralatan modern.",
+    image: "/assets/layanan/radiologi.jpg",
+  },
   {
     slug: "laboratorium",
     title: "Laboratorium",
     excerpt: "Pemeriksaan laboratorium akurat dan cepat.",
     image: "/assets/layanan/lab.jpg",
   },
-  {
-    slug: "radiologi",
-    title: "Radiologi",
-    excerpt: "Layanan radiologi dengan peralatan modern.",
-    image: "/assets/layanan/radiologi.jpg",
-  },
+ 
   {
     slug: "farmasi",
     title: "Farmasi",
@@ -39,15 +46,10 @@ export const SERVICES = [
     image: "/assets/layanan/farmasi.jpg",
   },
   {
-    slug: "ambulance dan Jenazah",
-    title: "Ambulance dan Jenazah",
+    slug: "ambulance",
+    title: "Ambulance",
     excerpt: "Program ambulance 24 jam.",
     image: "/assets/layanan/rehab.jpg",
   },
-  {
-    slug: "kebidanan-kandungan",
-    title: "Kebidanan & Kandungan",
-    excerpt: "Pelayanan ibu & anak secara menyeluruh.",
-    image: "/assets/layanan/obgyn.jpg",
-  },
+ 
 ];
