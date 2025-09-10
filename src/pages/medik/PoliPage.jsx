@@ -5,7 +5,7 @@ const POLI = [
   {
     key: "obgyn",
     name: "Poli Kandungan (Obgyn)",
-    desc: "Kontrol kehamilan, masalah menstruasi, program hamil.",
+    desc: "Kontrol kehamilan, masalah menstruasi.",
     tags: ["Obgyn", "Kandungan", "Kehamilan", "Ibu Hamil", "KB"],
   },
   {
