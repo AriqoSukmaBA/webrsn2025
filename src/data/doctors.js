@@ -31,7 +31,8 @@ export const DOCTORS = [
     id: "turah",
     name: "dr. Hj. Turah, Sp.OG, M.Kes",
     spec: "Spesialis Kandungan",
-    days: ["Senin - Jumat 'Pagi'(Pasien Umum) Senin, Rabu, dan Jumat Sabtu 'Sore'(BPJS) Sabtu 'Pagi' (Pasien Umum & BPJS)"],
+    days: ["Senin - Jumat 'Pagi'(Pasien Umum) Senin, Rabu, dan Jumat 'Sore'(BPJS) 
+           Sabtu 'Pagi' (Pasien Umum & BPJS)"],
     hours: "08.00–10.00 (pagi) 16.00 – 20.00 (sore)",
     image: "/assets/dokter/turah.jpg",
   },
