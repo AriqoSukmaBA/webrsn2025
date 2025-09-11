@@ -44,7 +44,6 @@ const BAG_TU = {
     "Ka. Sub. Bag. Umum dan Kepegawaian",
     "Ka. Sub. Bag. Perencanaan",
     "Ka. Sub. Bag. Keuangan",
-    "RM dan SIMRS",
   ],
 };
 
@@ -58,6 +57,7 @@ const BIDANG_PENUNJANG = {
   title: "Bidang Penunjang",
   head: "Ka. Bidang Penunjang",
   units: [
+    "RM dan SIMRS",
     "Inst.Laboratorium",
     "Inst.Farmasi",
     "Inst.Radiologi",

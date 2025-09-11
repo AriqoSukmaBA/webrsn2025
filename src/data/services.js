@@ -51,5 +51,30 @@ export const SERVICES = [
     excerpt: "Program ambulance 24 jam.",
     image: "/assets/layanan/rehab.jpg",
   },
+  {
+    slug: "icu",
+    title: "ICU",
+    excerpt: "Ruang ICU merupakan rawat inap khusus yg mengelola pasien dg kondisi kritis dan mengancam jiwa.",
+    image: "/assets/layanan/icu.jpeg",
+  },
+   {
+    slug: "nicu",
+    title: "NICU",
+    excerpt: "merupakan ruang bayi usia 《 28 hari dengan kondisi khusus yg memerlukan observasi ketat.",
+    image: "/assets/layanan/nicu.jpeg",
+  },
+   {
+    slug: "picu",
+    title: "PICU",
+    excerpt: "merupakan ruang bayi 》28 hari - 1 tahun dengan kondisi khusus yg memerlukan observasi ketat.",
+    image: "/assets/layanan/picu.jpeg",
+  },
+  {
+    slug: "hcu",
+    title: "HCU",
+    excerpt: "HCU berfungsi sebagai tingkat perawatan antara ruang rawat inap biasa dan ICU.",
+    image: "/assets/layanan/hcu.jpeg",
+  },
+  
  
 ];

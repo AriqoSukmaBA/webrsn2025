@@ -107,8 +107,8 @@ export default function KinerjaPage() {
     <ServiceLayout
       nav="about"
       title="Indikator Kinerja RS Nindhita"
-      subtitle="Ringkasan Key Performance Indicators (KPI) rumah sakit sebagai gambaran mutu layanan Januari - Juni 2025."
-      heroBadges={["BOR/ALOS/BTO/TOI", "NDR/GDR", "Update Triwulan"]}
+btitle="Ringkasan Key Performance Indicators (KPI) rumah sakit sebagai gambaran mutu layanan."
+      heroBadges={["BOR/ALOS/BTO/TOI", "NDR/GDR", "Januari - Juni 2025"]}
     >
       <section className="reveal">
         <h2>Ringkasan KPI</h2>

@@ -164,7 +164,7 @@ export default function RawatInapPage() {
                 ["Privasi",             ["Suite Privat",     "Privat",  "Tinggi",      "Sedang",       "Dasar"]],
                 ["Jumlah Bed/Kamar",    ["1 (suite)",        "1",       "2–3",         "3–4",          "4–6"]],
                 ["Kamar Mandi",         ["Dalam + heater",   "Dalam + heater", "Dalam", "Dalam",  "Dalam"]],
-                ["AC/TV & Fasilitas",   ["AC + Smart TV + Kulkas + Pantry", "AC + TV Pribadi", "AC + TV Bersama", "Kipas/AC Bersama", "—"]],
+                ["AC/TV & Fasilitas",   ["AC + Smart TV + Kulkas + Pantry", "AC + TV Pribadi", "AC + TV Bersama", "AC", "AC"]]
               ].map(([fitur, cols]) => (
                 <tr key={fitur} className="border-t border-slate-200">
                   <td className="py-3 font-semibold text-slate-900">{fitur}</td>
