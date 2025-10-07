@@ -32,7 +32,7 @@ export const DOCTORS = [
     name: "dr. Hj. Turah, Sp.OG, M.Kes",
     spec: "Spesialis Kandungan",
     days: ["Senin - Jumat'Pagi'(Pasien Umum) Senin, Rabu, dan Jumat'Sore'(BPJS) Sabtu'Pagi'(Pasien Umum & BPJS)"],
-    hours: "08.00–10.00 (pagi) 16.00 – 20.00 (sore)",
+    hours: "08.00–10.00 WIB (pagi) 16.00–20.00 WIB (sore)",
     image: "/assets/dokter/turah.jpg",
   },
   {
@@ -40,7 +40,7 @@ export const DOCTORS = [
     name: "dr. Bahrawi, Sp.OG",
     spec: "Spesialis Kandungan",
     days: ["Selasa", "Kamis"],
-    hours: "16.00–20.00",
+    hours: "16.00–20.00 WIB",
     image: "/assets/dokter/bahrawi.jpg",
   },
   {
@@ -48,7 +48,7 @@ export const DOCTORS = [
     name: "dr. Fera Diastyarini, Sp.A",
     spec: "Spesialis Anak",
     days: ["Senin", "Rabu", "Jumat"],
-    hours: "18.00–20.00",
+    hours: "18.00–20.00 WIB",
     image: "/assets/dokter/fera.jpg",
   },
   {
@@ -56,7 +56,7 @@ export const DOCTORS = [
     name: "dr. Agus Sunandar, Sp.A",
     spec: "Spesialis Anak",
     days: ["Selasa", "Kamis"],
-    hours: "18.00–20.00",
+    hours: "18.00–20.00 WIB",
     image: "/assets/dokter/agus.jpg",
   },
   {
@@ -64,7 +64,7 @@ export const DOCTORS = [
     name: "dr. Airlangga W, Sp.B",
     spec: "Spesialis Bedah",
     days: ["Senin", "Kamis"],
-    hours: "16.00–17.00",
+    hours: "16.00–17.00 WIB",
     image: "/assets/dokter/airlangga.jpg",
   },
   {
@@ -72,7 +72,7 @@ export const DOCTORS = [
     name: "dr. Sri Mulyono, Sp.B",
     spec: "Spesialis Bedah",
     days: ["Senin - Kamis"],
-    hours: "18.00–20.00",
+    hours: "18.00–20.00 WIB",
     image: "/assets/dokter/sri.jpg",
   },
   {
@@ -80,7 +80,7 @@ export const DOCTORS = [
     name: "dr. Moh. Hidayatur R, Sp.PD",
     spec: "Spesialis Penyakit Dalam",
     days: ["Senin Dan Selasa (Pasien Umum)", "Kamis(BPJS)"],
-    hours: "18.00–20.00",
+    hours: "18.00–20.00 WIB",
     image: "/assets/dokter/hidayat.jpg",
   },
   {
@@ -88,7 +88,7 @@ export const DOCTORS = [
     name: "dr. Ariska Megasari, Sp.PD",
     spec: "Spesialis Penyakit Dalam",
     days: ["Rabu"],
-    hours: "15.30–17.00",
+    hours: "15.30–17.00 WIB",
     image: "/assets/dokter/ariska.jpg",
   },
   {
@@ -96,7 +96,7 @@ export const DOCTORS = [
     name: "Radyo Wiranto, Sp.M",
     spec: "Spesialis Mata",
     days: ["Senin", "Selasa", "Rabu"],
-    hours: "14.00–16.30",
+    hours: "14.00–16.30 WIB",
     image: "/assets/dokter/radyo.jpg",
   },
    {
@@ -104,7 +104,7 @@ export const DOCTORS = [
     name: "dr. Aditya Airlangga EP, Sp.U",
     spec: "Urologi",
     days: ["Senin", "Rabu", "Jumat"],
-    hours: "18.00–20.00",
+    hours: "18.00–20.00 WIB",
     image: "/assets/dokter/adit.jpg",
   },
   {
@@ -112,7 +112,7 @@ export const DOCTORS = [
     name: "dr. Jamilah, Sp.N",
     spec: "Spesialis Saraf",
     days: ["Senin - Kamis"],
-    hours: "18.00–20.00",
+    hours: "18.00–20.00 WIB",
     image: "/assets/dokter/jamilah.jpg",
   },
 
@@ -121,7 +121,7 @@ export const DOCTORS = [
     name: "dr. Myra Edwina S, Sp.KJ",
     spec: "Spesialis Jiwa",
     days: ["Senin - Jumat"],
-    hours: "14.00–16.00",
+    hours: "14.00–16.00 WIB",
     image: "/assets/dokter/myra.jpg",
   },
  
@@ -137,8 +137,8 @@ export const DOCTORS = [
     id: "oriza",
     name: "dr. Oryza Sativa, Sp.JP",
     spec: "Spesialis Jantung",
-    days: ["Coming Soon"],
-    hours: "Coming Soon",
+    days: ["Selasa & Kamis "],
+    hours: "15.00-17.00 WIB",
     image: "/assets/dokter/jantung.jpg",
   },
   {
@@ -146,7 +146,7 @@ export const DOCTORS = [
     name: "dr. Muhammad Syafik, Sp.Rad",
     spec: "Radiologi",
     days: ["Senin - Kamis"],
-    hours: "15.00–17.00",
+    hours: "15.00–17.00 WIB",
     image: "/assets/dokter/syafik.jpg",
   },
 ];
