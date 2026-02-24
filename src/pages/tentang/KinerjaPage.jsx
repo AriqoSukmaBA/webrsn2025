@@ -8,42 +8,42 @@ const KPI = [
     key: "bor",
     name: "BOR (Bed Occupancy Rate)",
     unit: "%",
-    value: 65,
+    value: 74,
     targetNote: "60–85%",
   },
   {
     key: "alos",
     name: "ALOS (Average Length of Stay)",
     unit: "hari",
-    value: 2.2,
+    value: 2.24,
     targetNote: "3–6 hari",
   },
   {
     key: "bto",
     name: "BTO (Bed Turn Over)",
     unit: "kali",
-    value: 21.4,
+    value:30.4,
     targetNote: "≥ 40",
   },
   {
     key: "toi",
     name: "TOI (Turn Over Interval)",
     unit: "hari",
-    value: 1.4,
+    value: 1.3,
     targetNote: "1–3 hari",
   },
   {
     key: "ndr",
     name: "NDR (Net Death Rate)",
     unit: "‰",
-    value: 0,
+    value: 1.2,
     targetNote: "≤ 2‰",
   },
   {
     key: "gdr",
     name: "GDR (Gross Death Rate)",
     unit: "‰",
-    value: 1.05,
+    value: 2.2,
     targetNote: "≤ 45‰",
   },
 
@@ -58,7 +58,7 @@ const KPI = [
     key: "imr",
     name: "IMR (Infant Mortality Rate)",
     unit: "/1.000 KH",
-    value: 1,            
+    value: 2,            
     targetNote: "≤ 25/1.000 KH",
   },
 ];
@@ -106,9 +106,9 @@ export default function KinerjaPage() {
   return (
     <ServiceLayout
       nav="about"
-      title="Indikator Kinerja RS Nindhita"
+      title="Indikator Kinerja RS Nindhita 2025"
 btitle="Ringkasan Key Performance Indicators (KPI) rumah sakit sebagai gambaran mutu layanan."
-      heroBadges={["BOR/ALOS/BTO/TOI", "NDR/GDR", "Januari - Juni 2025"]}
+      heroBadges={["BOR/ALOS/BTO/TOI", "NDR/GDR", "2025"]}
     >
       <section className="reveal">
         <h2>Ringkasan KPI</h2>
