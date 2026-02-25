@@ -52,14 +52,14 @@ const KPI = [
     name: "MMR (Maternal Mortality Rate)",
     unit: "/100.000 KH",
     value: 0,      
-    targetNote: "≤ 183/100.000 KH",
+    targetNote: "≤ 70/100.000 KH",
   },
   {
     key: "imr",
     name: "IMR (Infant Mortality Rate)",
     unit: "/1.000 KH",
     value: 2,            
-    targetNote: "≤ 25/1.000 KH",
+    targetNote: "≤ 2/1.000 KH",
   },
 ];
 
