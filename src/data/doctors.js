@@ -101,7 +101,7 @@ export const DOCTORS = [
   },
   {
     id: "radyo",
-    name: "Radyo Wiranto, Sp.M",
+    name: "dr. Radyo Wiranto, Sp.M",
     spec: "Spesialis Mata",
     days: ["Senin", "Selasa", "Rabu"],
     hours: "14.00–16.30 WIB",
