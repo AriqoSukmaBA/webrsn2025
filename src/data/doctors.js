@@ -43,6 +43,14 @@ export const DOCTORS = [
     hours: "16.00–20.00 WIB",
     image: "/assets/dokter/bahrawi.jpg",
   },
+   {
+    id: "salman-faridzi",
+    name: "dr. Ach. salman F, Sp.OG, Subsp.Onk",
+    spec: "SpesialisObsteri dan Ginekologi",
+    days: ["Ravu", "Jumat"],
+    hours: "16.30–19.30 WIB",
+    image: "/assets/dokter/salman.jpg",
+  },
   {
     id: "fera-diastyarini",
     name: "dr. Fera Diastyarini, Sp.A",
@@ -52,12 +60,12 @@ export const DOCTORS = [
     image: "/assets/dokter/fera.jpg",
   },
   {
-    id: "agus-sunandar",
-    name: "dr. Agus Sunandar, Sp.A",
+    id: "geo-bertha",
+    name: "dr. Geo Bertha F, Sp.A",
     spec: "Spesialis Anak",
     days: ["Selasa", "Kamis"],
     hours: "18.00–20.00 WIB",
-    image: "/assets/dokter/agus.jpg",
+    image: "/assets/dokter/geo.jpg",
   },
   {
     id: "airlangga",
