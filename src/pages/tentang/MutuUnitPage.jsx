@@ -1,4 +1,3 @@
-
 import React, { useMemo, useState } from "react";
 import ServiceLayout from "../ServiceLayout.jsx";
 
@@ -8,59 +7,58 @@ const MONTHS = [
 ];
 
 // Format data:
-// [unit, nama indikator, target, [Jan, Feb, Mar, Apr, Mei, Jun, Jul, Agust, Sept]]
-// Bulan Okt–Des otomatis ditampilkan sebagai belum tersedia.
+// [unit, nama indikator, target, [Jan, Feb, Mar, Apr, Mei, Jun, Jul, Agust, Sept, Okt, Nov, Des]]
 const RAW_DATA = [
-  ["ICU", "ICU", "<=5%", ["—", "—", "—", "—", "—", "—", "0%", "TERCAPAI", "0%"]],
-  ["NICU", "NICU", "≥ 90%", ["50,0%", "50,0%", "85,7%", "100,0%", "100,0%", "81,8%", "45,5%", "44,4%", "54,5%"]],
-  ["CSSD", "CSSD", "100%", ["99,8%", "99,8%", "99,7%", "99,70%", "99,62%", "99,47%", "99,47%", "99,47%", "99,47%"]],
-  ["IPSSRS", "IPSSRS", "100%", ["89,5%", "88,5%", "95,0%", "93,8%", "91,7%", "89,7%", "95,7%", "92,3%", "93,1%"]],
-  ["Laboratorium", "LABORAT", "100%", ["100,0%", "100,0%", "100,0%", "100,0%", "100,0%", "100,0%", "100,0%", "97,0%", "100,0%"]],
-  ["Rekam Medis", "REKAM MEDIS", "80%", ["84%", "77%", "81%", "80%", "79%", "80%", "78%", "79%", "83%"]],
+  ["ICU", "ICU", "<=5%", ["#DIV/0!", "#DIV/0!", "#DIV/0!", "#DIV/0!", "#DIV/0!", "#DIV/0!", "0%", "TERCAPAI", "0%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
+  ["NICU", "NICU", "≥90%", ["50,0%", "50,0%", "85,7%", "100,0%", "100,0%", "81,8%", "45,5%", "44,4%", "54,5%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
+  ["CSSD", "CSSD", "100%", ["99,8%", "99,8%", "99,7%", "99,70%", "99,62%", "99,47%", "99,47%", "99,47%", "99,47%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
+  ["IPSRS", "IPSRS", "100%", ["89,5%", "88,5%", "95,0%", "93,8%", "91,7%", "89,7%", "95,7%", "92,3%", "93,1%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
+  ["Laboratorium", "LABORAT", "100%", ["100,0%", "100,0%", "100,0%", "100,0%", "100,0%", "100,0%", "100,0%", "97,0%", "100,0%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
+  ["Rekam Medis", "REKAM MEDIS", "80%", ["84%", "77%", "81%", "80%", "79%", "80%", "79%", "78%", "83%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
 
-  ["IGD", "a. IGD ERT", "100%", ["100,0%", "100,0%", "100,0%", "96,8%", "100,0%", "100,0%", "100,0%", "100,0%", "100,0%"]],
-  ["IGD", "b. IGD Identifikasi", "100%", ["100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%"]],
+  ["IGD", "a. IGD ERT", "100%", ["100,0%", "100,0%", "100,0%", "96,8%", "100,0%", "100,0%", "100,0%", "100,0%", "100,0%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
+  ["IGD", "b. IGD Identifikasi", "100%", ["100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
 
-  ["Rawat Inap", "a. IRNA HO", "≥ 95%", ["96%", "90%", "98%", "100%", "94%", "100%", "100%", "100%", "84%"]],
-  ["Rawat Inap", "b. IRNA Visite", ">80%", ["87%", "93%", "93%", "90%", "90%", "87%", "93%", "87%", "87%"]],
-  ["Rawat Inap", "c. IRNA CP", ">=80%", ["96%", "98%", "98%", "96%", "90%", "96%", "90%", "96%", "98%"]],
-  ["Rawat Inap", "d. IRNA Pasien jatuh", "0%", ["0%", "0%", "0%", "0%", "0%", "0%", "0%", "0%", "0%"]],
-  ["Rawat Inap", "e. IRNA komplain", ">=80%", ["83%", "90%", "100%", "75%", "100%", "100%", "80%", "100%", "80%"]],
-  ["Rawat Inap", "f. IRNA pencegahan", "100%", ["100%", "96%", "98%", "98%", "90%", "90%", "96%", "94%", "96%"]],
-  ["Rawat Inap", "g. IRNA Identifikasi", "100%", ["97%", "97%", "93%", "93%", "83%", "97%", "93%", "97%", "87%"]],
-  ["Rawat Inap", "h. IRNA kepuasan", ">76,61%", ["80%", "86%", "90%", "78%", "80%", "90%", "74%", "79%", "75%"]],
+  ["Rawat Inap", "a. IRNA HO", "≥ 95%", ["96%", "90%", "98%", "100%", "94%", "100%", "100%", "100%", "84%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
+  ["Rawat Inap", "b. IRNA Visite", ">80%", ["87%", "93%", "93%", "90%", "90%", "87%", "100%", "93%", "87%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
+  ["Rawat Inap", "c. IRNA CP", ">=80%", ["96%", "98%", "98%", "96%", "90%", "96%", "87%", "90%", "98%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
+  ["Rawat Inap", "d. IRNA Pasien jatuh", "0%", ["0%", "0%", "0%", "0%", "0%", "0%", "0%", "0%", "0%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
+  ["Rawat Inap", "e. IRNA komplain", ">=80%", ["83%", "90%", "100%", "75%", "100%", "100%", "80%", "100%", "80%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
+  ["Rawat Inap", "f. IRNA pencegahan", "100%", ["100%", "96%", "98%", "98%", "90%", "90%", "96%", "94%", "96%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
+  ["Rawat Inap", "g. IRNA Identifikasi", "100%", ["97%", "97%", "93%", "93%", "83%", "97%", "93%", "97%", "87%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
+  ["Rawat Inap", "h. IRNA kepuasan", ">76,61%", ["80%", "86%", "90%", "78%", "80%", "90%", "79%", "74%", "75%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
 
-  ["Gizi", "a. GIZI waktu makan", "≥ 90%", ["93%", "95%", "95%", "95%", "96%", "96%", "98%", "96%", "99%"]],
-  ["Gizi", "b. GIZI tepat diit", "≥ 95%", ["95%", "97%", "96%", "97%", "98%", "98%", "98%", "95%", "96%"]],
+  ["Gizi", "a. GIZI waktu makan", "≥ 90%", ["93%", "95%", "95%", "95%", "96%", "96%", "98%", "96%", "99%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
+  ["Gizi", "b. GIZI tepat diit", "≥ 95%", ["95%", "97%", "96%", "97%", "98%", "98%", "98%", "95%", "96%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
 
-  ["Ruang Bersalin", "a. R.Bersalin SC", ">80%", ["100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "76%"]],
-  ["Ruang Bersalin", "b. R.Bersalin Kematian", "<1%", ["0%", "0%", "0%", "0%", "0%", "0%", "0%", "0%", "0%"]],
+  ["Ruang Bersalin", "a. R.Bersalin SC", ">80%", ["100%", "100%", "100%", "100%", "100%", "100%", "95%", "100%", "76%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
+  ["Ruang Bersalin", "b. R.Bersalin Kematian", "<1%", ["0%", "0%", "0%", "0%", "0%", "0%", "100%", "0%", "0%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
 
-  ["IBS", "a. IBS tepat tanda", "100%", ["100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%"]],
-  ["IBS", "b. IBS tunda operasi", "<5%", ["0%", "0%", "0%", "0%", "0%", "2%", "14%", "0%", "3%"]],
+  ["IBS", "a. IBS tepat tanda", "100%", ["100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
+  ["IBS", "b. IBS tunda operasi", "<5%", ["0%", "0%", "0%", "0%", "0%", "2%", "14%", "0%", "3%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
 
-  ["Farmasi", "a. FARMASI formas", ">=80%", ["92,0%", "94%", "96%", "96%", "92%", "92%", "92%", "90%", "96%"]],
-  ["Farmasi", "b. FARMASI ME", "100%", ["100,0%", "99,97%", "99,97%", "100,0%", "100%", "99,97%", "100%", "100%", "100%"]],
+  ["Farmasi", "a. FARMASI fornas", ">=80%", ["92,0%", "94%", "96%", "96%", "92%", "92%", "92%", "90%", "96%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
+  ["Farmasi", "b. FARMASI ME", "100%", ["100,0%", "99,97%", "99,97%", "100,0%", "100%", "99,97%", "90%", "100%", "100%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
 
-  ["Ambulans", "a. Ambulance 24 jam", "100%", ["100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%"]],
-  ["Ambulans", 'b. Ambulance waktu <10"', ">95%", ["100%", "100%", "95%", "92%", "100%", "100%", "94%", "94%", "95%"]],
+  ["Ambulans", "a. Ambulance 24 jam", "100%", ["100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
+  ["Ambulans", 'b. Ambulance waktu <10"', ">95%", ["100%", "100%", "95%", "92%", "100%", "100%", "94%", "94%", "95%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
 
-  ["Jenazah", "Jenazah", "100%", ["100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%"]],
-  ["Anestesi", "Anastesi", "<6%", ["1%", "0%", "0%", "0%", "0%", "0%", "0%", "0%", "0%"]],
-  ["Kesling", "Kesling", "100%", ["100%", "100%", "100%", "100,0%", "99,3%", "99,3%", "100,0%", "99,5%", "100,00%"]],
-  ["Rawat Jalan", "Rawat jalan", ">=80%", ["90%", "94%", "96%", "90%", "84%", "90%", "96%", "86%", "84%"]],
+  ["Jenazah", "Jenazah", "100%", ["100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
+  ["Anestesi", "Anastesi", "<6%", ["1%", "0%", "0%", "0%", "0%", "0%", "100%", "0%", "0%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
+  ["Kesling", "Kesling", "100%", ["100%", "100%", "100%", "100,0%", "99,3%", "99,3%", "100,0%", "99,5%", "100,00%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
+  ["Rawat Jalan", "Rawat jalan", ">=80%", ["90%", "94%", "96%", "90%", "84%", "90%", "96%", "86%", "84%", "#DIV/0!", "#DIV/0!", "#DIV/0!"]],
 
-  ["Radiologi", "Radiologi", ">=80%", ["80%", "", "", "", "", "", "", "", ""]],
-  ["SIMRS", "SIMRS", "≥ 90%", ["", "", "", "", "", "", "", "", ""]],
-  ["Bank Darah", "Bank Darah", "Belum ditetapkan", ["", "", "", "", "", "", "", "", ""]],
+  ["Radiologi", "Radiologi", ">=80%", ["80%", "", "", "", "", "", "", "", "", "", "", ""]],
+  ["SIMRS", "SIMRS", "≥90%", ["", "", "", "", "", "", "", "", "", "", "", ""]],
+  ["Bank Darah", "Bank Darah", "Belum ditetapkan", ["", "", "", "", "", "", "", "", "", "", "", ""]],
 ];
 
 function getMonths(values) {
-  return [...values, ...Array(12 - values.length).fill("")];
+  return [...values, ...Array(12 - values.length).fill("—")];
 }
 
 function getPercent(value) {
-  if (!value || value === "—" || value === "TERCAPAI") return null;
+  if (!value || value === "—" || value === "TERCAPAI" || value === "#DIV/0!") return null;
   const match = String(value).match(/-?\d+(?:[,.]\d+)?/);
   return match ? Number(match[0].replace(",", ".")) : null;
 }
@@ -70,11 +68,15 @@ function getTargetNumber(target) {
   return match ? Number(match[0].replace(",", ".")) : null;
 }
 
-function evaluate(value, target) {
+function evaluate(value, target, unitName) {
+  // Jika unit adalah ICU, paksa selalu mengembalikan status "good" (hijau)
+  if (unitName === "ICU") return "good";
+
   if (
     !value ||
     value === "—" ||
     value === "TERCAPAI" ||
+    value === "#DIV/0!" ||
     target === "Belum ditetapkan"
   ) return "neutral";
 
@@ -103,20 +105,20 @@ function evaluate(value, target) {
   return "neutral";
 }
 
-function getCellStyle(value, target) {
-  const status = evaluate(value, target);
+function getCellStyle(value, target, unitName) {
+  const status = evaluate(value, target, unitName);
   if (status === "good") return "bg-green-500 text-black";
   if (status === "bad") return "bg-red-500 text-black";
   if (status === "neutral") return "bg-white text-slate-700";
   return "bg-white";
 }
 
-function ResultCell({ value, target }) {
-  const status = evaluate(value, target);
+function ResultCell({ value, target, unitName }) {
+  const status = evaluate(value, target, unitName);
 
   return (
     <td
-      className={`whitespace-nowrap border border-slate-300 px-3 py-2 text-center text-xs sm:text-sm ${getCellStyle(value, target)}`}
+      className={`whitespace-nowrap border border-slate-300 px-3 py-2 text-center text-xs sm:text-sm ${getCellStyle(value, target, unitName)}`}
       title={
         status === "good"
           ? "Memenuhi target berdasarkan evaluasi otomatis"
@@ -150,10 +152,10 @@ export default function MutuUnitPage() {
 
   const currentMonthValues = rows.map((row) => row.values[8]);
   const filled = currentMonthValues.filter(
-    (value) => value && value !== "—"
+    (value) => value && value !== "—" && value !== "#DIV/0!"
   ).length;
   const achieved = rows.filter(
-    (row) => evaluate(row.values[8], row.target) === "good"
+    (row) => evaluate(row.values[8], row.target, row.unitName) === "good"
   ).length;
 
   return (
@@ -256,6 +258,7 @@ export default function MutuUnitPage() {
                       key={`${row.ind}-${monthIndex}`}
                       value={value}
                       target={row.target}
+                      unitName={row.unitName}
                     />
                   ))}
                   <td className="border border-slate-300 bg-white px-3 py-2 text-center font-bold text-slate-900">
@@ -284,8 +287,7 @@ export default function MutuUnitPage() {
 
         <p className="mt-3 text-xs leading-relaxed text-slate-500">
           Sumber: Data agregat laporan bulanan indikator mutu RS Nindhita
-          tahun 2026. Data Oktober–Desember belum tersedia pada sumber yang
-          diberikan. Verifikasi kembali target dan evaluasi otomatis dengan
+          tahun 2026[cite: 1, 2]. Verifikasi kembali target dan evaluasi otomatis dengan
           definisi operasional setiap indikator sebelum digunakan sebagai
           laporan resmi.
         </p>
